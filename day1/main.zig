@@ -5,7 +5,7 @@ pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
 
     // Read in file
-    const file = try std.fs.cwd().openFile("input", std.fs.File.OpenFlags{ .mode = std.fs.File.OpenMode.read_only });
+    const file = try std.fs.cwd().openFile("input", .{ .mode = .read_only });
     defer file.close();
 
     // Get global allocator
